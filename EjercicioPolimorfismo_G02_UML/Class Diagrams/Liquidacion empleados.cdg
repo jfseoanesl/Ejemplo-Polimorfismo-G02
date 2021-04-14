@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Liquidacion empleados">
+  <ClassDiagramComponents>
+    <Class name="Empleado" package="" visibility="public" isAbstract="true" xPosition="390.0" yPosition="127.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getLiquidacionMes" returnType="double" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="EmpleadoAsalariado" package="" visibility="public" xPosition="282.0" yPosition="308.0">
+      <Fields>
+        <Field name="pSemanal" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getLiquidacionMes" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EmpleadoPorHora" package="" visibility="public" xPosition="511.0" yPosition="308.0">
+      <Fields>
+        <Field name="pHora" type="double" visibility="private"/>
+        <Field name="pHoraE" type="double" visibility="private"/>
+        <Field name="nHoras" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getLiquidacionMes" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EmpleadoPorComision" package="" visibility="public" xPosition="48.0" yPosition="116.0">
+      <Fields>
+        <Field name="vMes" type="double" visibility="private"/>
+        <Field name="pComision" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getLiquidacionMes" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EmpleadoBaseComision" package="" visibility="public" xPosition="52.0" yPosition="327.0">
+      <Fields>
+        <Field name="sBase" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getLiquidacion" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="EmpleadoPorHora" target="Empleado"/>
+    <IsRelation name="is" source="EmpleadoAsalariado" target="Empleado"/>
+    <IsRelation name="is" source="EmpleadoBaseComision" target="EmpleadoPorComision"/>
+    <IsRelation name="is" source="EmpleadoPorComision" target="Empleado"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
